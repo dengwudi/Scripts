@@ -27,10 +27,10 @@ notify:
 jobs:
   qq_read:
     # 使用前请阅读 https://github.com/TNanko/Scripts/blob/master/docs/qq_read.md
-    enable: false # true 启用脚本； false 不启用脚本（默认不启用脚本）
+    enable: true # true 启用脚本； false 不启用脚本（默认不启用脚本）
     version: 1.3.2
     skip_check_script_version: false # 默认不跳过版本检测
-    notify: false # true 启用消息推送； false 不启用消息推送（默认不发消息推送）
+    notify: true # true 启用消息推送； false 不启用消息推送（默认不发消息推送）
     notify_mode:  # 如果全都配置了，可以根据自身需求进行消息推送方式的选择，不需要的可以注释掉或者删除。由于 bark 消息长度的限制，不推荐 bark
       - bark
       - telegram_bot
@@ -40,9 +40,9 @@ jobs:
       UPLOAD_TIME: 5 # 每次上传阅读时长（单位分钟）
       MAX_READ_TIME: 600 # 每日最大阅读时长（单位分钟）
       ACCOUNTS:
-        - HEADERS:
-          BODY:
-          BOOK_URL:
+        - HEADERS: {"ywsession":"jm7xc7rj3j2hi5zpp501u8h494imymhh","Cookie":"ywguid=1525314452;ywkey=ywFsxOyZnX5y;platform=android;channel=mqqmina;mpVersion=0.35.3;qq_ver=8.4.18.4945;os_ver=Android 7.1.2;mpos_ver=1.19.0;platform=android;openid=A59262016ABB20418B9277365305CA69","Connection":"keep-alive","Content-Type":"application/json","Accept":"*/*","Host":"mqqapi.reader.qq.com","User-Agent":"Mozilla%2F5.0+%28Linux%3B+Android+7.1.2%3B+OXF-AN10+Build%2FN2G48B%3B+wv%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Version%2F4.0+Chrome%2F68.0.3440.70+Mobile+Safari%2F537.36 QQ/8.4.18.4945 V1_AND_SQ_8.4.18_1558_YYB_D QQ/MiniApp","Referer":"https://appservice.qq.com/1110657249/0.35.3/page-frame.html","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","mpversion":"0.35.3"}
+          BODY: {"common":{"appid":1450024393,"areaid":5,"qq_ver":"8.4.18.4945","os_ver":"Android 7.1.2","mp_ver":"0.35.3","mpos_ver":"1.19.0","brand":"HUAWEI","model":"OXF-AN10","screenWidth":360,"screenHeight":640,"windowWidth":360,"windowHeight":586,"openid":"A59262016ABB20418B9277365305CA69","guid":1525314452,"session":"9gg8ttod3dwv3vf88i4r86910m3octdg","scene":3001,"source":-1,"hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"19351473","cid":"1"},"dis":1608305275422,"ext6":109,"eventID":"bookRead_ad_adLoad_I","type":"shown","did":"31df7082cb27e0df36c7317f306e2064","ccid":1,"bid":"19351473","bookStatus":1,"bookPay":0,"from":"3001_19351473"}]}
+          BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=3001&refer=pages%2Findex%2Findex&bid=855951&readTime=3003&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A3003%2C%22pay_status%22%3A0%2C%22is_tail%22%3A0%7D%7D%5D&sp=-1
           WITHDRAW: false # 默认不启用提现功能，启用前必须保证账号已经实名认证（模式：满额提现，每天23点以后开始尝试提现，每次提现10元，不满10元不提现，不使用2元和1元提现次数）
           HOSTING_MODE: false # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
   bilibili:
